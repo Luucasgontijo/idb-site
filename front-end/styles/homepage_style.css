@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-3);
+    font: 16px 'Montserrat', sans-serif;
+}
+
+li, a, button{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--color-1);
+    text-decoration: none;
+    margin: 12px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.header-logo{
+    width: 60%;
+}
+
+.header-logo:hover{
+    transition: all 0.3s ease 0s;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.nav-items a{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav-items a{
+    transition: all 0.3s ease 0s;   
+}
+
+.nav-items a:hover{
+    color:  var(--color-2);
+}
+
+button {
+    background-color: var(--color-1);
+    color: var(--color-3);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;   
+}
+
+button:hover{
+    background-color: var(--color-2);
+}
+
+
+
+section {
+    background-color: var(--color-4);
+    box-sizing: border-box;
+    width: 100%;
+    top: 100px  ;
+    height: 300vh;
+    align-items: center;
+    padding: 0 10%; 
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color:  none;
+
+}
+
+.container-img, .container-video{
+    margin: 10px;
+    object-fit: cover;
+    height: 600px;
+    width: 600px;
+    min-width: max-content;
+    background-color: var(--color-4);
+}
+
+ul {
+    background-color: var(--color-4);
+    opacity: 3;
+}
+
+li {
+    background-color: var(--color-4);
+    opacity: 3;
+}
+
+.slick-list {
+    background-color: var(--color-4);
+    opacity: 3;
+
+}
+
+.slick-track {
+    background-color: var(--color-4);
+    opacity: 3;
+
+}
+
+div{
+    background-color: var(--color-4);
+    opacity: 3;
+}
+
+.nav-items{
+    list-style: none;
+    background-color: var(--color-3);
+}
+
+p   {
+    background-color: var(--color-4);
+    color: var(--color-1);
+    font-size: 20px;
+    padding: 20px;
+}
+
+.Idb_titulo{
+   font-weight: 700;
+   font-size: 6.5vh;
+}
+
+.box_1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-header{
+    width: 350px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}

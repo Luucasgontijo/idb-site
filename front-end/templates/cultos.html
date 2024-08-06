@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igreja de Deus - Sitíos St. Luzia</title>    
+   
+    <link rel="stylesheet" href="/front-end/styles/homepage_style.css">
+    <link rel="stylesheet" href="/front-end/styles/colors.css">
+</head>
+<body>
+    <header>
+        <a class="logo-header" href="/front-end/templates/index.html"><img class="header-logo" src="/front-end/img/logo-2.png" alt=""></a> 
+    <nav>
+            <ul class="nav-items">
+                <a  href="/front-end/templates/about.html">Quem somos</a>
+                <a  href="/front-end/templates/cultos.html">Cultos</a>
+                <a  href="/front-end/templates/projects.html">Projetos</a>
+
+            </ul>        
+    </nav>
+    <a class="nav-item" href="/front-end/templates/contact.html"><button>Contato</button></a>
+</header>
+    <section>
+        <div class="box_1">
+            <p>Cultos Semanais
+                Domingo
+                EBD – 9h00
+                Cultos Dominicais – 10h15 | 19h30
+                Culto em LIBRAS – 17h30
+                Culto NTJ (Não tão Jovem) – 18h
+                
+                Quarta
+                Culto de Oração – 20h
+                
+                Sábado
+                Culto de Jovens e Adolescentes – 20h</p>
+        </div>
+        
+    </section>
+    <script>
+        const campos = "media_type,media_url";
+        const limite = 1000;
+        const token = "IGQWROYkpXcWN6cFd5QVNIRnd2V3NEeTR0bS1wOG5rSkRERy1SZATZAqMmNMd0JQNWU1ZA0hmdGtaSktxbVYxRUhKaDJFS0QtbUxOVDBiY2huY3JVbUM5cWRoeV9fR1Y0SGlXQm15S29MLWZAWM0pZAZA00tbE9Pb2VteU0ZD"
+        const baseURL = `https://graph.instagram.com/me/media?fields=${campos}&access_token=${token}&limit=${limite}`;
+
+        fetch(baseURL)
+            .then(response => response.json())
+            .then(data => {
+                const container = document.querySelector('.container');
+                data.data.forEach(img => {
+                    const mediaType = img.media_type;
+                    const mediaUrl = img.media_url;
+
+                    if(mediaType === 'VIDEO') {
+                        // const video = document.createElement('video');
+                        // video.src = mediaUrl;
+                        // video.classList.add("container-video");
+                        // container.appendChild(video);
+                    } else {
+                        const img = document.createElement('img');
+                        img.src = mediaUrl;
+                        img.classList.add("container-img");
+                        container.appendChild(img);
+                    }
+                });
+                $('.container').slick({
+                    dots: true,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3,
+                                infinite: true,
+                                dots: true
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
+                });
+            });
+        
+    </script>
+    <script src=""></script>
+</body>
+</html>

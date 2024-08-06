@@ -1,0 +1,26 @@
+:root {
+    --color-1: #E1E7F4 ;
+    --color-2: #7287B5;
+    --color-3: #2D4475;
+    --color-4: #071636;
+  }
+/* Color Theme Swatches in Hex */
+$My-Color-Theme-1-hex: #E1E7F4;
+$My-Color-Theme-2-hex: #7287B5;
+$My-Color-Theme-3-hex: #2D4475;
+$My-Color-Theme-4-hex: #071636;
+
+/* Color Theme Swatches in RGBA */
+$My-Color-Theme-1-rgba: rgba(225,231,244, 1);
+$My-Color-Theme-2-rgba: rgba(114,135,181, 1);
+$My-Color-Theme-3-rgba: rgba(45,68,117, 1);
+$My-Color-Theme-4-rgba: rgba(7,22,54, 1);
+
+/* Color Theme Swatches in HSLA */
+$My-Color-Theme-1-hsla: hsla(221, 46, 91, 1);
+$My-Color-Theme-2-hsla: hsla(221, 31, 57, 1);
+$My-Color-Theme-3-hsla: hsla(220, 44, 31, 1);
+$My-Color-Theme-4-hsla: hsla(220, 77, 11, 1);
+
+
+/* Color Theme Swatches in Hex */
