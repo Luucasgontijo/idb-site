@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const campos = "media_type,media_url,permalink";
     const limite = 40;
 
-    const token = ;
     const baseURL = `https://graph.instagram.com/me/media?fields=${campos}&access_token=${token}&limit=${limite}`;
     
     fetch(baseURL)
