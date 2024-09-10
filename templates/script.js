@@ -1,13 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     const campos = "media_type,media_url,permalink";
     const limite = 40;
+
+    const token = ;
     const baseURL = `https://graph.instagram.com/me/media?fields=${campos}&access_token=${token}&limit=${limite}`;
     
     fetch(baseURL)
         .then((response) => response.json())
         .then((data) => { 
             const container = document.querySelector(".container");
-    
+
             data.data.forEach((img) => {
                 const mediaType = img.media_type;
                 const mediaUrl = img.media_url;
@@ -24,11 +26,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     const image = document.createElement("img");
                     image.src = mediaUrl;
                     image.classList.add("container-img");
+                    image.onload = () => {
+                        image.style.opacity = 1; // Defina a opacidade para 1 após o carregamento
+                    };
                     anchor.appendChild(image);
                     container.appendChild(anchor);
                 }
             });
 
+            // Inicialize o carrossel após adicionar as imagens
             $('.responsive').slick({
                 dots: true,
                 arrows: true,
@@ -65,5 +71,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 ]
             });
+        })
+        .catch((error) => {
+            console.error("Error fetching Instagram data:", error);
         });
+
+    // Adicione a animação ao rolar a página
+    const tituloElements = document.querySelectorAll('.Idb_titulo');
+
+    function animateOnScroll() {
+        tituloElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                element.classList.add('animate');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Chame uma vez para animar elementos visíveis na carga
 });

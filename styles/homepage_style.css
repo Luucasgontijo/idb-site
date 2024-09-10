@@ -5,7 +5,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font: 16px 'Montserrat', sans-serif;
+    font: 1rem 'Montserrat', sans-serif;
 }
 
 body{
@@ -19,7 +19,7 @@ body{
 li, a, button{
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 1.2rem;
     color: var(--color-1);
     text-decoration: none;
     margin: 12px;
@@ -35,11 +35,8 @@ li, a, button{
     padding: 20px 5%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    transition: 1s; /* Add transition here */
-    transition: all 0.3s ease-in-out;
+    transition: top 0.3s ease-in-out;
 }
-
-
 
 .header-logo{
     display: block;
@@ -48,22 +45,66 @@ li, a, button{
 }
 
 .header-logo:hover{
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0.5s;
     opacity: 0.5;
     cursor: pointer;
 }
 
 .nav-items a{
     display: inline-block;
-    padding: 0 20px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.logo_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18rem;
+    height: 6rem;
+}
+
+.img-logo{
+    width: 16rem;
+    height: auto;
+}
+.img-logo-button:hover{
+    opacity: 0.7;
+    transition: all 0.2s 0s ease;
+}
+
+
+
+.div_header {
+    width: 11rem;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-items a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: all 0.3s ease 0s;   
 }
 
 .nav-items a:hover{
     color:  var(--color-2);
+    font-size: 1.3rem;   
+}
+
+.nav-item button:hover{
+    background-color: var(--color-3);
+    color:  var(--color-1);
+    font-size: 1.3rem;   
 }
 
 button {
@@ -75,11 +116,6 @@ button {
     cursor: pointer;
     transition: all 0.3s ease 0s;   
 }
-
-button:hover{
-    background-color: var(--color-2);
-}
-
 
 
 .section1 {
@@ -123,16 +159,18 @@ button:hover{
     padding-bottom: 15px; /* Add padding to avoid content being cut off */
 }
 
-
-
  .container-img {
     display: inline-block;
     width: 30rem;
     height: 30rem;
     object-fit: cover;
     padding: 10px;
-
 }
+
+.container-img {
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.5s ease-out, transform 0.3s ease-out;}
+
 
 .slick-dots {
     display: block !important;
@@ -142,9 +180,6 @@ button:hover{
 .slick-dots li button:before {
     color: #000; /* Adjust color as needed */
 }
-
-
-
 
 .nav-items{
     list-style: none;
@@ -159,8 +194,15 @@ p   {
 }
 
 .Idb_titulo{
-   font-weight: 700;
-   font-size: 5rem;
+    font-weight: 700;
+    font-size: 5rem;
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 5s ease-out, transform 0.01s ease-out;
+}
+
+.Idb_titulo.animate {
+    opacity: 1;
+    animation: fadeIn 5s forwards; /* Animação de fade in */
 }
 
 .box_1{
@@ -171,20 +213,7 @@ p   {
 }
 
 
-.img-logo{
-    width: 16rem;
-}
-
 .img-logo-button{
-    margin: 0px 0px;
-    padding: 0px 0px;
-    border: none;
-    border-radius: 40px;
-    background-color: white;
-    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
-}
-.img-logo-button:hover{
-    opacity: 0.7;
     margin: 0px 0px;
     padding: 0px 0px;
     border: none;
@@ -202,7 +231,7 @@ footer{
     top: 90rem;
     height:fit-content;
    
-    background-color: var(--color-2);
+    background-color: var(--color-1);
     padding: 20px 0;
     text-align: center;
     padding: 1rem;
@@ -213,37 +242,34 @@ footer{
 }
 
 footer p{
-    background-color: var(--color-2);
+    background-color: var(--color-1);
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 300;
     color: white;
-    opacity: 0.7;
 
 }
 
 footer img{
-    background-color: var(--color-2);
+    background-color: var(--color-1);
     width: 10rem;
 }
 
-
-
 .social_buttons{
     display: flex;
-    background-color: var(--color-2);
+    background-color: var(--color-1);
 
 }
 
 .social_buttons img{
     margin: 0.25rem 0.25rem;
-    background-color: var(--color-2);
+    background-color: var(--color-1);
     width: 2.8rem;
 }
 
 .social_buttons img:hover{
     opacity: 0.5;
     transition: all 0.3s ease 0s;
-    background-color: var(--color-2);
+    background-color: var(--color-1);
 }
 
 .header-scroll{
@@ -254,11 +280,9 @@ footer img{
 }
 
 .instagram_div{ 
-
     background-color: var(--color-3););
     height: 33rem;
     text-align: center;
-
     width: 100vw;
 }
 
@@ -292,3 +316,15 @@ footer img{
     opacity: 1;
     color: white;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
